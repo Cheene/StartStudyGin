@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>模板继承</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 10px;
+        }
+        .nav{
+            height: 20px;
+            color: aqua;
+            position: fixed;
+            background-color: black;
+            width: 100%;
+        }
+        .main{
+            background-color:rebeccapurple ;
+        }
+        .menu{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<div class="nav"></div>
+<div class="main">
+    <div class="menu"></div>
+    <div class="content">
+        {{/*定义一个根模板*/}}
+        {{ block "content" . }}{{end}}
+    </div>
+</div>
+<div class="container-fluid">
+    {{block "content" . }}{{end}}
+</div>
+</body>
+</html>
