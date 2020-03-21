@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Go Templates</title>
+</head>
+<body>
+<div class="container-fluid">
+    <!--
+    . 表示传递的什么就是什么
+
+    -->
+    <h1>    姓名： {{- .u1.Name -}}</h1>
+    <h1>
+        年龄： {{.m1.age}}
+    </h1>
+    <p>
+        {{/* if 与 end 是成对编译的*/}}
+        {{$v1 := 100 }}
+        {{if $v1}}
+        {{$v1}}
+        {{else}}
+        啥都没有
+        {{end}}
+    </p>
+    <p>
+        {{if lt .m1.age 22}}
+        好好上学
+        {{else}}
+        好好工作吧
+        {{end}}
+    </p>
+    <h1>我的爱好</h1>
+    {{.hobbylist}}
+    <ul>
+        {{ range $idx,$hobby :=  .hobbylist}}
+        <li>{{$hobby}}</li>
+        {{end}}
+
+    </ul>
+</div>
+</body>
+</html>
