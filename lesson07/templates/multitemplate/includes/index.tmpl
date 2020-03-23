@@ -1,0 +1,9 @@
+{{/*继承 base.tmpl 模板*/}}
+{{template "base.tmpl" .}}
+
+{{ define "content" }}
+    <div>
+        Hello Index
+    </div>
+    <p>你好啊 {{ . }}</p>
+{{end}}
