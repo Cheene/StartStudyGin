@@ -63,7 +63,7 @@ func main() {
 		})
 	})
 
-	r.GET("posts/index", func(c *gin.Context) {
+	r.GET("/posts/index", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "posts/index.tmpl", gin.H{
 			"title": "post none of your business",
 		})
