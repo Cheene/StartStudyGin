@@ -15,10 +15,10 @@ func main() {
 	//1 定义路由
 	r := gin.Default()
 	//2 解析模板
-	r.LoadHTMLFiles("./index.html", "./home.html")
+	r.LoadHTMLFiles("./404.html", "./home.html")
 	//3 响应请求
 	r.GET("/index", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", nil)
+		c.HTML(http.StatusOK, "404.html", nil)
 	})
 
 	r.GET("/home", func(c *gin.Context) {
