@@ -21,7 +21,7 @@ type User struct {
 	ID     int64
 	Name   *string       `gorm:"default:'xiaowangzi'"`
 	Gender sql.NullInt32 // 实现了 Scanner?Valuer 接口
-	Age    int64         `gorm:"default:'20''"`
+	Age    int64         `gorm:"default:20"`
 }
 
 func main() {
@@ -41,6 +41,7 @@ func main() {
 
 	//2 创建表，自动迁移，把结构体和数据表进行对应
 	db.AutoMigrate(&User{})
+
 	//3 创建一个结构体的实例
 	u := User{
 		Name: new(string),
